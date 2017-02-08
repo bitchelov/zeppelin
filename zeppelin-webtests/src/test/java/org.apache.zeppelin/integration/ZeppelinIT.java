@@ -17,14 +17,16 @@
 
 package org.apache.zeppelin.integration;
 
-import org.apache.zeppelin.AbstractZeppelinIT;
-import org.apache.zeppelin.WebDriverManager;
-import org.apache.zeppelin.ZeppelinITUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.zeppelin.selenium.AbstractZeppelinIT;
+import org.apache.zeppelin.utils.WebDriverManager;
+import org.apache.zeppelin.utils.ZeppelinITUtils;
 import org.hamcrest.CoreMatchers;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.Assert;
 import org.junit.rules.ErrorCollector;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -33,10 +35,8 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import static org.apache.commons.lang3.StringUtils.isNotBlank;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+
 
 /**
  * Test Zeppelin with web browser.
@@ -292,7 +292,7 @@ public class ZeppelinIT extends AbstractZeppelinIT {
               + "//div[@class=\"control ng-scope\"]//ul[@class=\"dropdown-menu dropdown-menu-right\"]/li[1]"))
               .getAttribute("textContent");
 
-      assertTrue("Cannot find paragraph id for the 2nd paragraph", isNotBlank(secondParagraphId));
+      Assert.assertTrue("Cannot find paragraph id for the 2nd paragraph", StringUtils.isNotBlank(secondParagraphId));
 
       // Update first paragraph to call z.runParagraph() with 2nd paragraph id
       setTextOfParagraph(1,

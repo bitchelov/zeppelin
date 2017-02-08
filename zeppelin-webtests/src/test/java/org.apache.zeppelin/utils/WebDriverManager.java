@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.zeppelin;
+package org.apache.zeppelin.utils;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -138,7 +138,7 @@ public class WebDriverManager {
     }
 
     if (loaded == false) {
-      fail();
+      Assert.fail();
     }
 
     return driver;

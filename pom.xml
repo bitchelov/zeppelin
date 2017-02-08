@@ -78,6 +78,7 @@
     <module>zeppelin-web</module>
     <module>zeppelin-server</module>
     <module>zeppelin-distribution</module>
+    <module>zeppelin-webtests</module>
   </modules>
 
   <properties>

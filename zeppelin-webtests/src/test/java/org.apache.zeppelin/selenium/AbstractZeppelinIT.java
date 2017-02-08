@@ -15,12 +15,13 @@
  * limitations under the License.
  */
 
-package org.apache.zeppelin;
+package org.apache.zeppelin.selenium;
 
 
 import com.google.common.base.Function;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.io.FileUtils;
+import org.apache.zeppelin.utils.ZeppelinITUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
@@ -40,7 +41,7 @@ abstract public class AbstractZeppelinIT {
   protected static WebDriver driver;
 
   protected final static Logger LOG = LoggerFactory.getLogger(AbstractZeppelinIT.class);
-  protected static final long MAX_IMPLICIT_WAIT = 30;
+  public static final long MAX_IMPLICIT_WAIT = 30;
   protected static final long MAX_BROWSER_TIMEOUT_SEC = 30;
   protected static final long MAX_PARAGRAPH_TIMEOUT_SEC = 60;
 

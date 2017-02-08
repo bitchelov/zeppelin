@@ -25,15 +25,16 @@ import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.zeppelin.AbstractZeppelinIT;
-import org.apache.zeppelin.WebDriverManager;
-import org.apache.zeppelin.ZeppelinITUtils;
+import org.apache.zeppelin.selenium.AbstractZeppelinIT;
+import org.apache.zeppelin.utils.WebDriverManager;
+import org.apache.zeppelin.utils.ZeppelinITUtils;
 import org.apache.zeppelin.conf.ZeppelinConfiguration;
 import org.hamcrest.CoreMatchers;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.Assert;
 import org.junit.rules.ErrorCollector;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -136,7 +137,8 @@ public class AuthenticationIT extends AbstractZeppelinIT {
     try {
       pollingWait(By.xpath("//li[@class='dropdown notebook-list-dropdown']"),
           MAX_BROWSER_TIMEOUT_SEC).click();
-      assertTrue(driver.findElements(By.xpath("//a[@class=\"notebook-list-item ng-scope\"]")).size() > 0);
+      Assert
+          .assertTrue(driver.findElements(By.xpath("//a[@class=\"notebook-list-item ng-scope\"]")).size() > 0);
       pollingWait(By.xpath("//li[@class='dropdown notebook-list-dropdown']"),
               MAX_BROWSER_TIMEOUT_SEC).click();
       pollingWait(By.xpath("//li[@class='dropdown notebook-list-dropdown']"),

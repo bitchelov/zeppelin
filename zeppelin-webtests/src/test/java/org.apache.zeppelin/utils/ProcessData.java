@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.zeppelin;
+package org.apache.zeppelin.utils;
 
 
 import org.slf4j.Logger;

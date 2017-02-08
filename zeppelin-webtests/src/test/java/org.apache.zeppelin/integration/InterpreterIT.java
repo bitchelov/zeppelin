@@ -17,8 +17,8 @@
 
 package org.apache.zeppelin.integration;
 
-import org.apache.zeppelin.AbstractZeppelinIT;
-import org.apache.zeppelin.WebDriverManager;
+import org.apache.zeppelin.selenium.AbstractZeppelinIT;
+import org.apache.zeppelin.utils.WebDriverManager;
 import org.hamcrest.CoreMatchers;
 import org.junit.After;
 import org.junit.Before;

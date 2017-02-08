@@ -15,9 +15,10 @@
  * limitations under the License.
  */
 
-package org.apache.zeppelin;
+package org.apache.zeppelin.utils;
 
 
+import org.apache.zeppelin.selenium.AbstractZeppelinIT;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.openqa.selenium.WebDriver;
