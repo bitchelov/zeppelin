@@ -18,6 +18,7 @@
 package org.apache.zeppelin.utils;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.zeppelin.selenium.AbstractZeppelinIT;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -25,7 +26,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
@@ -36,7 +36,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.Assert.fail;
+import org.junit.Assert;
 
 
 public class WebDriverManager {
@@ -95,14 +95,6 @@ public class WebDriverManager {
         driver = new ChromeDriver();
       } catch (Exception e) {
         LOG.error("Exception in WebDriverManager while ChromeDriver ", e);
-      }
-    }
-
-    if (driver == null) {
-      try {
-        driver = new SafariDriver();
-      } catch (Exception e) {
-        LOG.error("Exception in WebDriverManager while SafariDriver ", e);
       }
     }
 
